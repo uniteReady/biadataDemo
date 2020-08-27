@@ -1,0 +1,8 @@
+server:
+  servlet:
+    context-path: /log
+  port: 8080
+
+#logging:
+#  pattern:
+#    console:
