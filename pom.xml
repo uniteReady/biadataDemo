@@ -12,6 +12,8 @@
         <module>bigdata_log</module>
         <module>bigdata_etl</module>
         <module>bigdata_zk</module>
+        <module>bigdata_spark</module>
+        <module>hbase</module>
     </modules>
 
     <properties>
@@ -22,6 +24,14 @@
         <log4j.version>1.7.30</log4j.version>
         <flume.version>1.6.0-cdh5.16.2</flume.version>
         <zk.version>3.4.5-cdh5.16.2</zk.version>
+        <scala.version>2.12.10</scala.version>
+        <scala.tools.version>2.12</scala.tools.version>
+        <mysql.version>5.1.28</mysql.version>
+        <spark.version>2.4.6</spark.version>
+        <junit.version>4.12</junit.version>
+        <ipParse.version>1.7.2</ipParse.version>
+        <hbase.version>1.2.0-cdh5.16.2</hbase.version>
+
     </properties>
 
 
@@ -87,6 +97,39 @@
                 <groupId>org.apache.curator</groupId>
                 <artifactId>curator-framework</artifactId>
                 <version>4.0.0</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-core_${scala.tools.version}</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.lionsoul</groupId>
+                <artifactId>ip2region</artifactId>
+                <version>${ipParse.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.hbase</groupId>
+                <artifactId>hbase-client</artifactId>
+                <version>${hbase.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.hbase</groupId>
+                <artifactId>hbase-server</artifactId>
+                <version>${hbase.version}</version>
             </dependency>
 
 

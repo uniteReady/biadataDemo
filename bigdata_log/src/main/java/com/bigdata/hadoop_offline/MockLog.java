@@ -59,7 +59,7 @@ public class MockLog {
                                 new File("data/log" + outPath))));
 
 
-        for(int i = 0; i <= 400000; i++){
+        for(int i = 0; i <= 400; i++){
             //日志开始时间
             String logStartTime = SDF.format(new Date());
             //访问ip

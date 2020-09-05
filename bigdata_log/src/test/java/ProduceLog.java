@@ -47,12 +47,12 @@ public class ProduceLog {
 
 
         //500000
-        for (int i = 0; i <= 20; i++) {
+        for (int i = 0; i <= 50; i++) {
             //日志开始时间
-//            String logStartTime = SDF.format(new Date());
-            Calendar cal = Calendar.getInstance();
-            cal.add(Calendar.DAY_OF_MONTH,-1);
-            String logStartTime = SDF.format(cal.getTime());
+            String logStartTime = SDF.format(new Date());
+//            Calendar cal = Calendar.getInstance();
+//            cal.add(Calendar.DAY_OF_MONTH,-1);
+//            String logStartTime = SDF.format(cal.getTime());
             //访问ip
             String ip = IP[random.nextInt(IP.length)];
             //代理ip
@@ -86,7 +86,7 @@ public class ProduceLog {
             //上传到log_server
             Upload.upload(URLPATH,result);
 //            Thread.sleep(1000);
-            System.out.println(result);
+//            System.out.println(result);
         }
 
 
