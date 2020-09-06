@@ -7,8 +7,8 @@ import java.util.Locale;
 
 public class LogParser {
 
-//    private static String ipDbPath = "D:\\code\\bigdata\\ip2region\\ip2region\\data\\ip2region.db";
-    private static String ipDbPath = "/home/jackson/app/bigdata_dw/lib/ip2region.db";
+    private static String ipDbPath = "D:\\code\\bigdata\\ip2region\\ip2region\\data\\ip2region.db";
+//    private static String ipDbPath = "/home/jackson/app/bigdata_dw/lib/ip2region.db";
 
     static Access access = new Access();
     public static String  etlParse(String log){

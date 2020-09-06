@@ -14,17 +14,18 @@ object RddEtl {
 private val logger: Logger = Logger.getLogger("RddEtl")
 
   def main(args: Array[String]): Unit = {
-    if (args.length != 2){
-        logger.severe("need 2 args")
-        System.exit(1)
-    }
-//    val input= "D:\\code\\bigdata\\hadoop_offline\\logs\\access.log"
-//    val output = "./output"
-    val input = args(0)
-    val output = args(1)
-//    val conf = new SparkConf().setMaster("local").setAppName("etl")
-    val sc = SparkUtil.setMaster("yarn")
-//    val sc = new SparkContext(new SparkConf())
+//    if (args.length != 2){
+//        logger.severe("need 2 args")
+//        System.exit(1)
+//    }
+    val input= "D:\\code\\bigdata\\hadoop_offline\\logs\\access.log"
+    val output = "./output"
+//    val input = args(0)
+//    val output = args(1)
+
+//    val sc = SparkUtil.setMaster("yarn")
+    val sc = SparkUtil.setMaster("local")
+
     var access = new Access
 
     val configuration = sc.hadoopConfiguration

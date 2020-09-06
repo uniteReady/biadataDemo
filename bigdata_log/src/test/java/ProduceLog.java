@@ -28,8 +28,8 @@ public class ProduceLog {
     private static String[] URL = new String[]{
             "http://www.941jackson.com/", "https://www.941jacksonsina.com.cn/",
             "https://www.941jacksonhao123.com/", "https://www.941jacksonsohu.com/", "https://www.941jackson163.com/",
-            "https://www.941jacksonjd.com/", "https://941jackson.ai.taobao.com/", "http://www.941jacksonhao123.com/tejia/",
-            "http://www.941jacksonbaidu.com.cn/icbc/", "https://www.941jacksonbilibili.com/"
+            "https://www.941jacksonjd.com/", "https://ruoze.ke.qq.com/", "https://www.ruozedata.com/",
+
     };
     private static String[] URL_SUFFIX = new String[]{
             "?ab=3&c=2&d=4", "?m=7&method=ff", "a=5&b=2&c=3",
@@ -47,7 +47,7 @@ public class ProduceLog {
 
 
         //500000
-        for (int i = 0; i <= 50; i++) {
+        for (int i = 0; i <= 500; i++) {
             //日志开始时间
             String logStartTime = SDF.format(new Date());
 //            Calendar cal = Calendar.getInstance();
