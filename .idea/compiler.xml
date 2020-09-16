@@ -7,11 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="bigdata_log" />
-        <module name="bigdata-etl" />
+        <module name="hbase" />
         <module name="bigdata_spark" />
         <module name="bigdata_etl" />
-        <module name="hbase" />
         <module name="log_server" />
+        <module name="bigdata-etl" />
         <module name="bigdata_zk" />
       </profile>
     </annotationProcessing>

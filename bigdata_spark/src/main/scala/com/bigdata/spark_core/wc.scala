@@ -9,6 +9,8 @@ object wc {
     val sc = new SparkContext(conf)
 
     sc.parallelize(List(1,2,3))
+      .persist()
+      .collect()
 //      .aggregate()
 
 
