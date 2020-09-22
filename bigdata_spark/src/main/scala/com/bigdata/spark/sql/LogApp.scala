@@ -14,14 +14,15 @@ object LogApp {
       .getOrCreate()
     import spark.implicits._
 
-    val df = spark.sparkContext.textFile("ruozedata-spark-sql/data/access.log")
+   //218.88.0.0,Android,11645,-,POST,https://www.941jackson163.com/?htt=f7,200,411,7281,MISS,四川省,成都市,电信,https,www.941jackson163.com,?htt=f7,2020,09,03
+    val df = spark.sparkContext.textFile("D:\\code\\bigdata\\hadoop_offline\\data\\access.log")
       .map(x => {
-        val splits = x.split("\t")
+        val splits = x.split(",")
         val platform = splits(1)
-        val traffic = splits(6).toLong
-        val province = splits(8)
-        val city = splits(9)
-        val isp = splits(10)
+        val traffic = splits(8).toLong
+        val province = splits(10)
+        val city = splits(11)
+        val isp = splits(12)
         (platform, traffic, province, city, isp)
       }).toDF("platform", "traffic", "province", "city", "isp")
 

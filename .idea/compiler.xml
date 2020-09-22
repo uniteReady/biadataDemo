@@ -6,9 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="bigdata_log" />
+        <module name="springbootdemo" />
         <module name="hbase" />
         <module name="bigdata_spark" />
+        <module name="bigdata_log" />
         <module name="bigdata_etl" />
         <module name="log_server" />
         <module name="bigdata-etl" />
@@ -22,6 +23,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="log_server" options="-parameters" />
+      <module name="springbootdemo" options="-parameters" />
     </option>
   </component>
 </project>
