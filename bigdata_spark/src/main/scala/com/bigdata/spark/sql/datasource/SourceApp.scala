@@ -1,8 +1,8 @@
-package com.bigdata.spark.sql
+package com.bigdata.spark.sql.datasource
 
 import java.util.Properties
 
-import org.apache.spark.sql.{SaveMode, SparkSession}
+import org.apache.spark.sql.SparkSession
 
 object SourceApp {
   def main(args: Array[String]): Unit = {
@@ -11,6 +11,7 @@ object SourceApp {
     val spark: SparkSession = SparkSession.builder()
       .appName(this.getClass.getCanonicalName)
       .master("local[2]")
+      .enableHiveSupport()
       .getOrCreate()
     import spark.implicits._
 
@@ -18,12 +19,25 @@ object SourceApp {
 
 
 
-//    val df = spark.read.format("jdbc")
-//        .option("url","jdbc:mysql://ruozedata001:3306")
-//        .option("dbtable","ruozedata.emp")
-//      .option("user", "root")
-//      .option("password", "!Ruozedata123")
-//      .load()
+    val df = spark.read.format("jdbc")
+      .option("url","jdbc:mysql://bigdata:3306")
+      .option("dbtable","bigdata.emp")
+      .option("user", "root")
+      .option("password", "hadoop")
+      .option("driver","com.mysql.jdbc.Driver")
+      .load()
+      df.show()
+
+//    val df = spark.read.format("jdbc").option("url","jdbc:mysql://bigdata:3306").option("dbtable","bigdata.emp").option("user", "root").option("password", "hadoop").option("driver","com.mysql.jdbc.Driver").load()
+
+
+
+//这样写，表的字段数据类型可能会不准确，需要提前建好表
+//    df.write.option("fileFormat","parquet")
+//      .format("hive")
+//        .saveAsTable("sqark_sql_emp")
+
+
 //    df.filter('DEPTNO === 20)
 //        .write.format("jdbc")
 //      .option("url","jdbc:mysql://ruozedata001:3306")
@@ -32,17 +46,16 @@ object SourceApp {
 //      .option("password", "!Ruozedata123")
 //        .save()
 
-    val properties = new Properties()
-    properties.put("user", "root")
-    properties.put("password", "!Ruozedata123")
-    spark.read
-      .jdbc("jdbc:mysql://ruozedata001:3306", "ruozedata.emp", properties)
-        .orderBy('SAL.desc).show()
+//    val properties = new Properties()
+//    properties.put("user", "root")
+//    properties.put("password", "!Ruozedata123")
+//    spark.read
+//      .jdbc("jdbc:mysql://ruozedata001:3306", "ruozedata.emp", properties)
+//        .orderBy('SAL.desc).show()
     spark.stop()
   }
 
   def json(spark:SparkSession): Unit = {
-    import spark.implicits._
     //    val df = spark.read.format("json").load("ruozedata-spark-sql/data/access.json")
     //df.printSchema()
     //    df.show(false)
@@ -105,6 +118,6 @@ object SourceApp {
     //        }).toDF("name","age")
     //            .write.format("parquet").mode(SaveMode.Overwrite).save("out")
 
-    spark.read.load("out").show()
+//    spark.read.load("out").show()
   }
  }
