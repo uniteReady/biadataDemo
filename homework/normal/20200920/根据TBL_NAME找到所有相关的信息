@@ -1,0 +1,36 @@
+根据TBL_NAME找到所有相关的信息
+已知信息 TBL_NAME gcxx
+
+第一步：进入 TBLS 表，获取表的基本信息
+select * from TBLS where TBL_NAME = 'gcxx'
+获取到 TBL_ID 19;	SD_ID 29;	创建时间 db 编号 11;		用户 ruoze;  	表的类型 管理表;
+
+第二步 根据 DB_ID 11  获取数据库的相关信息	select * from DBS where DB_ID = 11
+获取到db 在hdfs上的位置，用户 ruoze
+
+第三步，根据 TBL_ID 获取分区信息
+select * from PARTITIONS WHERE TBL_ID = 19
+有两个分区 PART_ID 分别为 16 17  SD_ID 分别为 30 31
+根据PART_ID 16 17 从 PARTITION_PARAMS 表获取 每一个分区的详细信息
+SELECT * FROM PARTITION_PARAMS WHERE PART_ID = 16
+SELECT * FROM PARTITION_PARAMS WHERE PART_ID = 17
+包括每个分区的文件个数，行数，文件大小
+根据 TBL_ID = 19 从 PARTITION_KEYS 表获取 分区字段的名称 类型
+select * FROM PARTITION_KEYS WHERE TBL_ID = 19
+根据 PART_ID 从 PARTITION_KEY_VALS 表中获取分区的值
+SELECT * FROM PARTITION_KEY_VALS WHERE PART_ID = 16
+SELECT * FROM PARTITION_KEY_VALS WHERE PART_ID = 17
+根据 SD_ID 29 30 31 从 SDS表中获取表的数据格式,数据在hdfs上的位置 并且获取 SERDE_ID 29 30 31
+SELECT * FROM SDS WHERE SD_ID = 29 30 31
+根据 SERDE_ID 从 SERDE_PARAMS 表获取分隔符 \t
+
+根据 SERDE_ID 从 SERDES 中获取 数据格式  orc
+SELECT * FROM SERDES WHERE SERDE_ID = 29 30 31
+
+
+第三步，获取桶信息
+select * from BUCKETING_COLS WHERE SD_ID = 29
+得出桶的列名为 kkbh
+
+根据 TBL_ID 从 TABLE_PARAMS 中得出 表数据格式，压缩格式，最后更新时间
+SELECT * FROM TABLE_PARAMS WHERE TBL_ID = 19

@@ -109,7 +109,7 @@ with Logging{
         }
       }
     ).filter(null != _)
-      //将数据类型转换成spark的数据类型
+      //根据schema数据类型转换数据
       .map(x => x.zipWithIndex.map{
         case(value,index) =>{
           val colDatatype = structfieldsArray(index).dataType
