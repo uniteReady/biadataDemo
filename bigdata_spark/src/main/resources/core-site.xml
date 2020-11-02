@@ -18,10 +18,10 @@
 
 <configuration>
 <!--    程序读取的默认的文件系统，这样配置默认文件系统为hdsf文件系统-->
-    <property>
-        <name>fs.defaultFS</name>
-        <value>hdfs://bigdata:9000</value>
-    </property>
+<!--    <property>-->
+<!--        <name>fs.defaultFS</name>-->
+<!--        <value>hdfs://bigdata:9000</value>-->
+<!--    </property>-->
     <property>
         <name>hadoop.tmp.dir</name>
         <value>/home/jackson/tmp</value>

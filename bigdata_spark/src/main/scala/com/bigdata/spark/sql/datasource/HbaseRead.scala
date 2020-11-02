@@ -1,10 +1,10 @@
-package com.bigdata.spark_core.datasource
+package com.bigdata.spark.sql.datasource
 
 import org.apache.hadoop.hbase.client.{HBaseAdmin, Result}
 import org.apache.hadoop.hbase.io.ImmutableBytesWritable
-import org.apache.hadoop.hbase.{HBaseConfiguration, HConstants}
-import org.apache.hadoop.hbase.mapreduce.{TableInputFormat, TableOutputFormat}
+import org.apache.hadoop.hbase.mapreduce.TableInputFormat
 import org.apache.hadoop.hbase.util.Bytes
+import org.apache.hadoop.hbase.{HBaseConfiguration, HConstants}
 import org.apache.spark.{SparkConf, SparkContext}
 
 object HbaseRead {

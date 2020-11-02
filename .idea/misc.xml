@@ -18,6 +18,14 @@
       </list>
     </option>
   </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/bigdata_spark/src/main/scala/com/bigdata/spark/streaming/http/HttpClientApp.scala" />
+    <file url="file://$PROJECT_DIR$/bigdata_spark/src/main/scala/com/bigdata/spark/streaming/http/RedisApp.scala" />
+    <file url="file://$PROJECT_DIR$/bigdata_spark/src/main/scala/com/bigdata/spark/streaming/http/RedisUtils.scala" />
+    <file url="file://$PROJECT_DIR$/bigdata_spark/src/main/scala/com/bigdata/spark/streaming/http/StateApp.scala" />
+    <file url="file://$PROJECT_DIR$/bigdata_spark/src/main/scala/com/bigdata/spark/streaming/http/StateApp2.scala" />
+    <file url="file://$PROJECT_DIR$/bigdata_spark/src/main/scala/com/bigdata/spark/streaming/http/StreamingHttpApp.scala" />
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>

@@ -1,20 +1,12 @@
-package com.bigdata.spark_core.datasource
-
-import java.sql.DriverManager
-
+package com.bigdata.spark.sql.datasource
 
 import org.apache.hadoop.hbase.client.Put
 import org.apache.hadoop.hbase.io.ImmutableBytesWritable
-import org.apache.hadoop.hbase.mapreduce.{TableInputFormat, TableOutputFormat}
+import org.apache.hadoop.hbase.mapreduce.TableOutputFormat
 import org.apache.hadoop.hbase.util.Bytes
 import org.apache.hadoop.hbase.{HBaseConfiguration, HConstants}
-import org.apache.hadoop.io.compress.BZip2Codec
-import org.apache.hadoop.io.{NullWritable, Text}
 import org.apache.hadoop.mapreduce.Job
-import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat
-import org.apache.spark.rdd.JdbcRDD
 import org.apache.spark.{SparkConf, SparkContext}
-
 
 object DataSourceApp {
   def main(args: Array[String]): Unit = {
